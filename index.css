@@ -13,7 +13,7 @@ body {
 .header {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/header-image.png);
+    background-image: linear-gradient(7deg, rgba(0, 0, 0, 0.8500) 10.00%, rgba(0, 0, 0, 0.8465) 17.25%, rgba(0, 0, 0, 0.8361) 24.50%, rgba(0, 0, 0, 0.8187) 31.75%, rgba(0, 0, 0, 0.7944) 39.00%, rgba(0, 0, 0, 0.7632) 46.25%, rgba(0, 0, 0, 0.7250) 53.50%, rgba(0, 0, 0, 0.6868) 60.75%, rgba(0, 0, 0, 0.6556) 68.00%, rgba(0, 0, 0, 0.6312) 75.25%, rgba(0, 0, 0, 0.6139) 82.50%, rgba(0, 0, 0, 0.6035) 89.75%, rgba(0, 0, 0, 0.6000) 97.00%), url(assets/Header_backgroung_img.jpg);
     background-size: cover;
     background-position: center;
     padding: 10px 8%;
@@ -42,6 +42,19 @@ nav button {
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.translate-icon {
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .language-btn {
@@ -69,18 +82,18 @@ nav button {
 .header-content h1 {
     font-size: 60px;
     line-height: 70px;
-    font-weight: 600;
+    font-weight: 700;
     max-width: 650px;
 }
 
 .header-content h3 {
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 20px;
 
 }
 
 .email-signup {
-    background: #fff;
+    background: transparent;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -90,9 +103,13 @@ nav button {
 
 .email-signup input {
     flex: 1;
-    border: 0;
     outline: 0;
     margin-left: 20px;
+    background: transparent;
+    padding: 17px 30px;
+    border: 1px solid rgb(118, 118, 118);
+    margin-right: 10px;
+    border-radius: 4px;
 }
 
 .email-signup button {
@@ -100,10 +117,55 @@ nav button {
     border: 0;
     outline: 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     padding: 15px 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
 }
+
+.getstarted-label::after {
+    content: none;
+}
+
+.email-signup button span {
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.curve-container {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+    height: 0.25rem;
+    z-index: 1;
+}
+
+.curve-container .inside-curve-container {
+    box-sizing: border-box;
+    display: block;
+    unicode-bidi: isolate;
+    border-radius: 100% 100% 0 0;
+    /* Updated to curve downward */
+}
+
+.curve-container .inside-curve-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin-bottom: -.25rem;
+    height: 10px;
+    clip-path: ellipse(100% 70% at 50% 0%);
+    background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
+}
+
 
 /*---------features------------------- */
 
@@ -121,13 +183,8 @@ nav button {
 }
 
 .text-col {
-    flex-basis: 50%;
     margin-bottom: 20px;
-}
-
-.img-col {
-    flex-basis: 50%;
-    margin-bottom: 20px;
+    margin: 0 10px;
 }
 
 .img-col img {
@@ -140,6 +197,57 @@ nav button {
     font-size: 50px;
 }
 
+.features select {
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.features select option {
+    color: #000;
+    padding: 0 10px;
+    width: 500px;
+}
+
+.features .carousel-row {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.carousel-left-arrow button {
+    background: rgba(255, 255, 255, 0.1);
+    height: 100px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(106, 105, 105, 0.7);
+}
+
+.carousel-left-arrow button:hover {
+    background: rgba(106, 105, 105, 0.7);
+    height: 100px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(106, 105, 105, 0.7);
+}
+
+.carousel-right-arrow button {
+    background: rgba(255, 255, 255, 0.1);
+    height: 100px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(106, 105, 105, 0.7);
+}
+
+.carousel-right-arrow button:hover {
+    background: rgba(106, 105, 105, 0.7);
+    height: 100px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(106, 105, 105, 0.7);
+}
 
 /* -----------------------------FAQ-------------------- */
 .faq {
@@ -296,6 +404,28 @@ input[type="radio"] {
         flex-basis: 100%;
     }
 
+    .features,
+    .row {
+        width: 100%;
+    }
+
+    .text-col {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .features select {
+        background: transparent;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 15px;
+    }
+
+    .features select option {
+        color: #000;
+        padding: 0 10px;
+    }
+
     .features h2 {
         font-size: 30px;
     }
@@ -307,10 +437,6 @@ input[type="radio"] {
     .row:nth-child(2),
     .row:nth-child(4) {
         flex-direction: column-reverse;
-    }
-
-    .features .row {
-        padding: 10px 0;
     }
 
     .faq h2 {
